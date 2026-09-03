@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аромат — кофейня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="dotnav" aria-label="Навигация по разделам">
+  <a href="#hero" class="dot active" data-label="Начало"></a>
+  <a href="#menu" class="dot" data-label="Меню"></a>
+  <a href="#gallery" class="dot" data-label="Интерьер"></a>
+  <a href="#booking" class="dot" data-label="Бронь"></a>
+  <a href="#contacts" class="dot" data-label="Контакты"></a>
+</nav>
+
+<header id="hero" class="hero">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-photo">
+    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&h=1100&q=70" alt="Приготовление кофе в кофейне «Аромат»">
+    <button class="scroll-fab" id="scrollToMenu" type="button">
+      <span>К меню</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">кофейня на углу тишины</span>
+    <h1 class="hero-title">Аром<span class="accent">ат</span></h1>
+    <p class="hero-tagline">Кофе, который согревает</p>
+    <div class="hero-index" aria-hidden="true">
+      <span>01</span>
+      <p>Свежая обжарка каждую неделю. Зерно из Эфиопии, Бразилии и Колумбии.</p>
+    </div>
+  </div>
+</header>
+
+<section id="menu" class="menu-section">
+  <div class="menu-heading">
+    <span class="section-index">02</span>
+    <h2>Меню</h2>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-category="coffee" type="button">Кофе</button>
+      <button class="tab" data-category="desserts" type="button">Десерты</button>
+      <button class="tab" data-category="breakfast" type="button">Завтраки</button>
+    </div>
+    <button class="cart-toggle-btn active" id="cartToggle" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.6a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg>
+      <span>Предзаказ</span>
+      <span class="cart-toggle-count" id="cartToggleCount" hidden>0</span>
+    </button>
+  </div>
+
+  <div class="menu-layout" id="menuLayout">
+    <div class="carousel">
+      <button class="car-btn prev" type="button" aria-label="Назад">‹</button>
+      <div class="tracks">
+        <div class="track" data-track="coffee"></div>
+        <div class="track" data-track="desserts" hidden></div>
+        <div class="track" data-track="breakfast" hidden></div>
+      </div>
+      <button class="car-btn next" type="button" aria-label="Вперёд">›</button>
+    </div>
+
+    <aside class="cart-panel" id="cartPanel">
+      <div class="cart-panel-head">
+        <h3>Ваш предзаказ</h3>
+        <button class="cart-close" id="cartClose" type="button" aria-label="Скрыть предзаказ">✕</button>
+      </div>
+      <ul class="cart-list" id="cartList"></ul>
+      <p class="cart-empty" id="cartEmpty">Пока пусто — добавьте что-нибудь вкусное из меню.</p>
+      <div class="cart-total-row">
+        <span>Итого</span>
+        <span class="cart-total" id="cartTotal">0 ₽</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-section">
+  <div class="gallery-heading">
+    <span class="section-index light">03</span>
+    <h2>Интерьер</h2>
+    <p>Тёплое дерево, живые растения и утреннее солнце из окна на восток.</p>
+  </div>
+  <div class="gallery-grid">
+    <figure class="g-item g-1"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=700&h=900&q=70" alt="Общий зал кофейни" loading="lazy"></figure>
+    <figure class="g-item g-2"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&h=500&q=70" alt="Зона отдыха с креслами и растениями" loading="lazy"></figure>
+    <figure class="g-item g-3"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&h=500&q=70" alt="Столик у окна с чашкой кофе" loading="lazy"></figure>
+    <figure class="g-item g-4"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=700&h=900&q=70" alt="Заваривание кофе методом пуровер" loading="lazy"></figure>
+    <figure class="g-item g-5"><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=700&h=500&q=70" alt="Барная стойка с подвесными светильниками" loading="lazy"></figure>
+  </div>
+</section>
+
+<section id="booking" class="booking-section">
+  <div class="booking-side">
+    <span class="section-index">04</span>
+    <h2>Забронировать<br>столик</h2>
+    <p>Оставьте заявку — мы позвоним и подтвердим бронь в течение 15 минут. Если вы уже выбрали блюда в меню, мы подготовим их к вашему приходу.</p>
+    <div class="booking-order-preview" id="orderPreview">
+      <h4>К заказу пока ничего не добавлено</h4>
+    </div>
+  </div>
+
+  <form id="bookingForm" class="booking-form">
+    <label>
+      <span>Имя</span>
+      <input type="text" name="name" required placeholder="Как к вам обращаться">
+    </label>
+    <label>
+      <span>Телефон</span>
+      <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__">
+    </label>
+    <div class="form-row">
+      <label>
+        <span>Дата</span>
+        <input type="date" name="date" required>
+      </label>
+      <label>
+        <span>Время</span>
+        <input type="time" name="time" required>
+      </label>
+    </div>
+    <label>
+      <span>Количество гостей</span>
+      <input type="number" name="guests" min="1" max="20" value="2" required>
+    </label>
+
+    <input type="hidden" name="order_summary" id="orderSummaryField">
+    <input type="hidden" name="order_total" id="orderTotalField">
+
+    <button type="submit" class="submit-btn">Забронировать столик</button>
+
+    <div class="booking-success" id="bookingSuccess" hidden></div>
+  </form>
+</section>
+
+<footer id="contacts" class="contacts-section">
+  <div class="contacts-main">
+    <span class="section-index light">05</span>
+    <h2>Контакты</h2>
+    <ul class="contact-list">
+      <li><strong>Адрес</strong><span>Москва, ул. Тёплая, 12</span></li>
+      <li><strong>Телефон</strong><span>+7 (495) 123-45-67</span></li>
+      <li><strong>Часы работы</strong><span>Пн–Вс, 8:00–22:00</span></li>
+      <li><strong>Почта</strong><span>hello@aroma-coffee.ru</span></li>
+    </ul>
+    <div class="socials">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Telegram">Telegram</a>
+      <a href="#" aria-label="VK">VK</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Кофейня «Аромат». Кофе, который согревает.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
